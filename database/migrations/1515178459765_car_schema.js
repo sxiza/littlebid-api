@@ -1,6 +1,6 @@
 'use strict'
 
-const Schema = use('Schema')
+const Schema = use('Schema');
 
 class CarSchema extends Schema {
   up () {
@@ -8,12 +8,12 @@ class CarSchema extends Schema {
       table.increments();
       table.integer('user_id').unsigned().references('id').inTable('users');
       table.integer('status').notNullable();
-      table.string('make', 100);
-      table.string('model', 1000);
-      table.integer('year');
-      table.decimal('price_per_hour');
+      table.string('make', 100).notNullable();
+      table.string('model', 1000).notNullable();
+      table.integer('year').notNullable();
+      table.decimal('price_per_hour').notNullable();
       table.timestamps();
-    })
+    });
   }
 
   down () {
@@ -21,4 +21,4 @@ class CarSchema extends Schema {
   }
 }
 
-module.exports = CarSchema
+module.exports = CarSchema;
