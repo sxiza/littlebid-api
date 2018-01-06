@@ -4,10 +4,10 @@ const Schema = use('Schema');
 
 class BookingSchema extends Schema {
   up () {
-    this.create('bookings', (table) => {
+    this.createIfNotExists('bookings', (table) => {
       table.increments();
-      table.integer('user_id').unsigned().references('id').inTable('users');
-      table.integer('car_id').unsigned().references('id').inTable('cars');
+      table.integer('user_id').unsigned().references('id').inTable('users').notNullable();
+      table.integer('car_id').unsigned().references('id').inTable('cars').notNullable();
       table.integer('type').notNullable();
       table.integer('status').notNullable();
       table.dateTime('start').notNullable();
