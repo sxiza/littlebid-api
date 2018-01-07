@@ -13,7 +13,7 @@ class UserSchema extends Schema {
       table.string('phone', 100);
       table.unique(['phone_country_code', 'phone']);
       table.string('password', 60).notNullable();
-      table.timestamp('deleted_at');
+      table.timestamp('deleted_at').nullable().default(null);
       table.timestamps();
     });
   }
