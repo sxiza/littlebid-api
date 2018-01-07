@@ -23,4 +23,4 @@ class UserSchema extends Schema {
   }
 }
 
-module.exports = UserSchema;
+module.exports = UserSchema

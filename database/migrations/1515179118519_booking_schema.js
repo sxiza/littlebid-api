@@ -22,4 +22,4 @@ class BookingSchema extends Schema {
   }
 }
 
-module.exports = BookingSchema;
+module.exports = BookingSchema

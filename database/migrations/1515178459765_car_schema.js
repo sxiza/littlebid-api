@@ -22,4 +22,4 @@ class CarSchema extends Schema {
   }
 }
 
-module.exports = CarSchema;
+module.exports = CarSchema
