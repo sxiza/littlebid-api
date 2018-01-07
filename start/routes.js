@@ -20,7 +20,8 @@ Route.get('/', ({ request }) => {
 })
 
 Route.group(() => {
-	Route.post('login', 'AuthController.login').as('auth.login');
+	Route.post('login', 'Auth/AuthController.login').as('auth.login');
+	Route.post('register', 'Auth/AuthController.register').as('auth.register');
 }).prefix('auth');
 
 Route.group(() => {
