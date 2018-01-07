@@ -7,3 +7,5 @@ class UserRepository {
         return await User.create({ name, surname, email });
     }
 }
+
+module.exports = UserController
