@@ -16,5 +16,14 @@
 const Route = use('Route')
 
 Route.get('/', ({ request }) => {
-  return { greeting: 'Hello world in JSON Xanimal' }
+	return { greeting: 'Hello world in JSON Xanimal' }
 })
+
+Route.group(() => {
+	Route.post('login', 'Auth/AuthController.login').as('auth.login');
+	Route.post('register', 'Auth/AuthController.register').as('auth.register');
+}).prefix('auth');
+
+Route.group(() => {
+	Route.get('/self', 'UserController.self').as('user.self').middleware('auth');
+}).prefix('user');
