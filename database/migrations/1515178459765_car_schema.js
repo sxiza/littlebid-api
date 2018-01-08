@@ -12,7 +12,7 @@ class CarSchema extends Schema {
       table.string('model', 255).notNullable();
       table.integer('year').notNullable();
       table.decimal('price_per_hour').notNullable();
-      table.timestamp('deleted_at');
+      table.timestamp('deleted_at').nullable().default(null);
       table.timestamps();
     });
   }

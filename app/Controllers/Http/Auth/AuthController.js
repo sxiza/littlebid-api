@@ -1,19 +1,23 @@
 'use strict'
-const User = use ('App/Models/User');
+
+const UserRepository = use('App/Repositories/UserRepository')
 
 class AuthController {
+    constructor() {
+        // protected
+        this.users = new UserRepository();
+    }
+
     async login({ request, auth }) {
         let { email, password } = request.all();
 
-        return await auth.attempt(email, password);
+        return await auth.withRefreshToken().attempt(email, password);
     }
 
-    async register({ request }) {
-        
-    }
+    async register({ request, auth }) {
+        let user = await this.users.create(request.all());
 
-    generatePassword() {
-
+        return await auth.withRefreshToken().generate(user);
     }
 }
 
