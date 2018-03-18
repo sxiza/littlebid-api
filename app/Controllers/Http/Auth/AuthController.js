@@ -1,11 +1,9 @@
 'use strict'
 
-const UserRepository = use('App/Repositories/UserRepository')
-
 class AuthController {
     constructor() {
         // protected
-        this.users = new UserRepository();
+        this.userService = use('FreeCar/Core/UserService')
     }
 
     async login({ request, auth }) {

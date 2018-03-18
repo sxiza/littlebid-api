@@ -18,7 +18,13 @@ const providers = [
     '@adonisjs/auth/providers/AuthProvider',
   	'@adonisjs/bodyparser/providers/BodyParserProvider',
   	'@adonisjs/cors/providers/CorsProvider',
-  	'@adonisjs/lucid/providers/LucidProvider'
+    '@adonisjs/lucid/providers/LucidProvider',
+
+    //FreeCar Models
+    path.join(__dirname, '..', 'models', 'Repositories/RepositoryProvider'),
+    
+    // FreeCar Core
+    path.join(__dirname, '..', 'services', 'FreeCar/Users/UserProvider')
 ]
 
 /*

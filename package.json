@@ -27,6 +27,8 @@
   },
   "devDependencies": {},
   "autoload": {
-    "App": "./app"
+    "FreeCar/Api": "./app",
+    "FreeCar/Core": "./services/FreeCar",
+    "FreeCar/Models": "./models"
   }
 }

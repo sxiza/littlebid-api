@@ -1,6 +1,6 @@
 'use strict'
 
-const User = use('App/Models/User')
+const User = use('FreeCar/Models/User')
 
 class UserRepository {
     async create(data) {
@@ -10,4 +10,4 @@ class UserRepository {
     }
 }
 
-module.exports = UserController
+module.exports = UserRepository
