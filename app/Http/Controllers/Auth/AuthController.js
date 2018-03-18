@@ -1,9 +1,11 @@
 'use strict'
 
+const Logger = use('Logger')
+
 class AuthController {
     constructor() {
         // protected
-        this.userService = use('FreeCar/Core/UserService')
+        this.userService = use('FreeCar/Core/UserService');
     }
 
     async login({ request, auth }) {
@@ -13,10 +15,11 @@ class AuthController {
     }
 
     async register({ request, auth }) {
-        let user = await this.users.create(request.all());
+        Logger.debug(request.all());
+        let user = await this.userService.create(request.all());
 
         return await auth.withRefreshToken().generate(user);
     }
 }
 
-module.exports = AuthLoginController
+module.exports = AuthController

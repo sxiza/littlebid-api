@@ -21,10 +21,10 @@ const providers = [
     '@adonisjs/lucid/providers/LucidProvider',
 
     //FreeCar Models
-    path.join(__dirname, '..', 'models', 'Repositories/RepositoryProvider'),
+    path.join(__dirname, '..', 'app', 'Models/Repositories/RepositoryProvider'),
     
     // FreeCar Core
-    path.join(__dirname, '..', 'services', 'FreeCar/Users/UserProvider')
+    path.join(__dirname, '..', 'app', 'Services/FreeCar/Users/UserProvider')
 ]
 
 /*
@@ -37,7 +37,8 @@ const providers = [
 |
 */
 const aceProviders = [
-  '@adonisjs/lucid/providers/MigrationsProvider'
+  '@adonisjs/lucid/providers/MigrationsProvider',
+  '@adonisjs/vow/providers/VowProvider'
 ]
 
 /*

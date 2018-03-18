@@ -21,9 +21,9 @@ Route.get('/', ({ request }) => {
 
 Route.group(() => {
 	Route.post('login', 'Auth/AuthController.login').as('auth.login');
-	Route.post('register', 'Auth/AuthController.register').as('auth.register');
+	Route.post('register', 'FreeCar/Api/Http/Controllers/Auth/AuthController.register').as('auth.register');
 }).prefix('auth');
 
 Route.group(() => {
-	Route.get('/self', 'UserController.self').as('user.self').middleware('auth');
+	Route.get('self', 'UserController.self').as('user.self').middleware('auth');
 }).prefix('user');

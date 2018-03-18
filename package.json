@@ -23,12 +23,13 @@
     "@adonisjs/framework": "^4.0.28",
     "@adonisjs/ignitor": "^1.0.14",
     "@adonisjs/lucid": "^4.0.24",
+    "@adonisjs/vow": "^1.0.15",
     "mysql": "^2.15.0"
   },
   "devDependencies": {},
   "autoload": {
     "FreeCar/Api": "./app",
-    "FreeCar/Core": "./services/FreeCar",
-    "FreeCar/Models": "./models"
+    "FreeCar/Core": "./app/Services",
+    "FreeCar/Models": "./app/Models"
   }
 }
