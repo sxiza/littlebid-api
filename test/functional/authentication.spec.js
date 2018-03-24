@@ -1,12 +1,11 @@
 'use strict'
 
 const { test, trait } = use('Test/Suite')('Authentication')
-const Chance = require('chance');
-const Logger = use('Logger')
+const Chance = use('chance')
 
 trait('Test/ApiClient')
 
-test('register a user', async ({ client, assert }) => {
+test('Register a user', async ({ client, assert }) => {
 	// Instantiate Chance so it can be used
 	var chance = new Chance();
 
@@ -17,7 +16,24 @@ test('register a user', async ({ client, assert }) => {
 							.field('password', "Password")
 							.field('password_confirm', "Password")
 							.end();
-	console.log(response.body);
+
 	response.assertStatus(200);
-	//   assert.include(response.body, "bearer", "It seems like there is a bearer token.");
+	response.assertJSONSubset({
+		type: 'bearer'
+	});
+});
+
+test('Login a user', async ({ client, assert }) => {
+	let userService = use('FreeCar/Core/UserService');
+	let user = await userService.getRandom();
+	
+	let response = await client.post('/auth/login')
+						.field('email', user.email)
+						.field('password', "Password")
+						.end();
+	
+	response.assertStatus(200);
+	response.assertJSONSubset({
+		type: 'bearer'
+	});
 });

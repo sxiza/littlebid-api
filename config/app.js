@@ -159,7 +159,7 @@ module.exports = {
     | Available drivers are: `file` and `console`.
     |
     */
-    transport: 'file',
+    transport: Env.get('LOG_TRANSPORT', 'console'),
 
     /*
     |--------------------------------------------------------------------------
@@ -173,7 +173,7 @@ module.exports = {
     console: {
       driver: 'console',
       name: 'adonis-app',
-      level: 'info'
+      level: Env.get('LOG_LEVEL', 'info')
     },
 
     /*
@@ -191,7 +191,7 @@ module.exports = {
       driver: 'file',
       name: 'adonis-app',
       filename: 'adonis.log',
-      level: 'info'
+      level: Env.get('LOG_LEVEL', 'info')
     }
   }
 }

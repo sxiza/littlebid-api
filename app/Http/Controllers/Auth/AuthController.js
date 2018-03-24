@@ -11,13 +11,14 @@ class AuthController {
     async login({ request, auth }) {
         let { email, password } = request.all();
 
+        Logger.info(`${email} logging in...`);
         return await auth.withRefreshToken().attempt(email, password);
     }
 
     async register({ request, auth }) {
-        Logger.debug(request.all());
         let user = await this.userService.create(request.all());
 
+        Logger.info(`Registering new User ${request.all().email}...`);
         return await auth.withRefreshToken().generate(user);
     }
 }

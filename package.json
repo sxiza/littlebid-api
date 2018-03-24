@@ -24,6 +24,7 @@
     "@adonisjs/ignitor": "^1.0.14",
     "@adonisjs/lucid": "^4.0.24",
     "@adonisjs/vow": "^1.0.15",
+    "lodash": "^4.17.5",
     "mysql": "^2.15.0"
   },
   "devDependencies": {},
