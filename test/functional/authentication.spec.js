@@ -14,7 +14,7 @@ test('Register a user', async ({ client, assert }) => {
 							.field('surname', chance.last())
 							.field('email', chance.email())
 							.field('password', "Password")
-							.field('password_confirm', "Password")
+							.field('password_confirmation', "Password")
 							.end();
 
 	response.assertStatus(200);

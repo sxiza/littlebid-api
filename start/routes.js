@@ -21,7 +21,9 @@ Route.get('/', ({ request }) => {
 
 Route.group(() => {
 	Route.post('login', 'FreeCar/Api/Http/Controllers/Auth/AuthController.login').as('auth.login');
-	Route.post('register', 'FreeCar/Api/Http/Controllers/Auth/AuthController.register').as('auth.register');
+	Route.post('register', 'FreeCar/Api/Http/Controllers/Auth/AuthController.register')
+		.validator('CreateUser')
+		.as('auth.register');
 }).prefix('auth');
 
 Route.group(() => {
