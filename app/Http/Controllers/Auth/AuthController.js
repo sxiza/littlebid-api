@@ -1,11 +1,13 @@
 'use strict'
 
 const Logger = use('Logger')
+const { validateAll } = use('Validator')
+const RegisterUser = use('LittleBid/Api/Validators/RegisterUser')
 
 class AuthController {
     constructor() {
         // protected
-        this.userService = use('FreeCar/Core/UserService');
+        this.userService = use('LittleBid/Core/UserService');
     }
 
     async login({ request, auth }) {
@@ -15,10 +17,9 @@ class AuthController {
         return await auth.withRefreshToken().attempt(email, password);
     }
 
-    async register({ request, auth }) {
+    async register({ request, auth, response }) {
         let user = await this.userService.create(request.all());
 
-        Logger.info(`Registering new User ${request.all().email}...`);
         return await auth.withRefreshToken().generate(user);
     }
 }

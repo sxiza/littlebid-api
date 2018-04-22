@@ -7,7 +7,7 @@ trait('Test/ApiClient')
 trait('Auth/Client')
 
 test('Retrieve current user', async ({ client, assert }) => {
-	let userService = use('FreeCar/Core/UserService');
+	let userService = use('LittleBid/Core/UserService');
 	let user = await userService.getRandom();
 	
 	let response = await client.get('/user/self')

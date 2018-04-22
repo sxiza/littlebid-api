@@ -1,5 +1,7 @@
 'use strict'
 
+const Env = use('Env')
+
 module.exports = {
   /*
   |--------------------------------------------------------------------------
@@ -26,7 +28,7 @@ module.exports = {
   */
   session: {
     serializer: 'lucid',
-    model: 'App/Models/User',
+    model: 'LittleBid/Models/User',
     scheme: 'session',
     uid: 'email',
     password: 'password'
@@ -47,7 +49,7 @@ module.exports = {
   */
   basic: {
     serializer: 'lucid',
-    model: 'FreeCar/Models/User',
+    model: 'LittleBid/Models/User',
     scheme: 'basic',
     uid: 'email',
     password: 'password'
@@ -64,12 +66,12 @@ module.exports = {
   */
   jwt: {
     serializer: 'lucid',
-    model: 'FreeCar/Models/User',
+    model: 'LittleBid/Models/User',
     scheme: 'jwt',
     uid: 'email',
     password: 'password',
     options: {
-      secret: 'self::app.appKey'
+      secret: Env.get('APP_KEY')
     }
   }
 }

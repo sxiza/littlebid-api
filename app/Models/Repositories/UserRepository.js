@@ -1,6 +1,6 @@
 'use strict'
 
-const User = use('FreeCar/Models/User')
+const User = use('LittleBid/Models/User')
 const Logger = use('Logger')
 const _ = use('lodash')
 

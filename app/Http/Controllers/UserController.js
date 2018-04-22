@@ -5,7 +5,7 @@ const Logger = use('Logger')
 class UserController {
     constructor() {
         // protected
-        this.userService = use('FreeCar/Core/UserService');
+        this.userService = use('LittleBid/Core/UserService');
     }
 
     self({ auth }) {

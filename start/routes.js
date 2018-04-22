@@ -20,13 +20,17 @@ Route.get('/', ({ request }) => {
 })
 
 Route.group(() => {
-	Route.post('login', 'FreeCar/Api/Http/Controllers/Auth/AuthController.login').as('auth.login');
-	Route.post('register', 'FreeCar/Api/Http/Controllers/Auth/AuthController.register')
-		.validator('CreateUser')
-		.as('auth.register');
+	Route.post('login', 'LittleBid/Api/Http/Controllers/Auth/AuthController.login').as('auth.login');
+	Route.post('register', 'LittleBid/Api/Http/Controllers/Auth/AuthController.register')
+		.as('auth.register')
+		.validator('RegisterUser');
 }).prefix('auth');
 
 Route.group(() => {
-	Route.get('self', 'FreeCar/Api/Http/Controllers/UserController.self').as('user.self').middleware('auth');
-	Route.get('random', 'FreeCar/Api/Http/Controllers/UserController.getRandom').as('user.get_random').middleware('auth');
+	Route.get('self', 'LittleBid/Api/Http/Controllers/UserController.self')
+		.as('user.self')
+		.middleware('auth');
+	Route.get('random', 'LittleBid/Api/Http/Controllers/UserController.getRandom')
+		.as('user.get_random')
+		.middleware('auth');
 }).prefix('user');

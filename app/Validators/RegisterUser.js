@@ -1,6 +1,16 @@
 'use strict'
 
-class CreateUser {
+const { formatters } = use('Validator')
+
+class RegisterUser {
+	get formatter () {
+		return formatters.JsonApi
+	}
+
+	get validateAll () {
+		return true;
+	}
+
 	get rules () {
 		return {
 			email: 'required|email|unique:users,email',
@@ -17,4 +27,4 @@ class CreateUser {
 	}
 }
 
-module.exports = CreateUser
+module.exports = RegisterUser

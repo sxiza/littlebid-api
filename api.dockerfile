@@ -7,10 +7,10 @@ FROM node:carbon-slim
 #RUN useradd --user-group --create-home --shell /bin/false app
 
 # Create app directory
-WORKDIR /usr/src/freecar-api
+WORKDIR /usr/src/littlebid-api
 
 # Copy and install files
-# COPY package.json /usr/src/freecar-api/package.json
+# COPY package.json /usr/src/littlebid-api/package.json
 
 # Install dependencies
 RUN npm i -g @adonisjs/cli

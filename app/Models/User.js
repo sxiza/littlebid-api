@@ -35,7 +35,7 @@ class User extends Model {
 	 * @return {Object}
 	 */
 	tokens () {
-		return this.hasMany('FreeCar/Models/Token')
+		return this.hasMany('LittleBid/Models/Token')
 	}
 }
 

@@ -21,11 +21,11 @@ const providers = [
     '@adonisjs/lucid/providers/LucidProvider',
     '@adonisjs/validator/providers/ValidatorProvider',
 
-    //FreeCar Models
+    //LittleBid Models
     path.join(__dirname, '..', 'app', 'Models/Repositories/RepositoryProvider'),
     
-    // FreeCar Core
-    path.join(__dirname, '..', 'app', 'Services/FreeCar/Users/UserProvider')
+    // LittleBid Core
+    path.join(__dirname, '..', 'app', 'Services/LittleBid/Users/UserProvider')
 ]
 
 /*
