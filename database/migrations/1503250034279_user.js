@@ -7,7 +7,7 @@ class UserSchema extends Schema {
 		let exists = await this.hasTable('users');
 
 		if (!exists)
-			this.createTable('users', table => {
+			this.create('users', table => {
 				table.increments();
 				table.string('name', 255).notNullable();
 				table.string('surname', 255).notNullable();
@@ -22,7 +22,7 @@ class UserSchema extends Schema {
 		let exists = await this.hasTable('users');
 
 		if (exists)
-			this.dropTable('users');
+			this.drop('users');
 	}
 }
 
